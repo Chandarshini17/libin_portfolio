@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { FaBars } from "react-icons/fa";
-import Typical from "react-typical";
+import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../../documents/Libin Resume.pdf";
 import libin from "../../images/libin.jpg";
 import Project from "../Project/ProjectDesktop";
@@ -116,20 +116,21 @@ const HeroMobile = () => {
                 <div style={{ maxWidth: "90%" }}>
                     <h4 style={{ fontSize: "14px", fontWeight: "bold", color: "#fff" }}>HELLO</h4>
                     <h2 style={{ fontSize: "38px", fontWeight: "bold", lineHeight: "1.3" }}>
-                                                <Typical
-                                                    steps={[
-                                                        "Tester at Wipro", 2000,
-                                                        "Manual Testing Specialist", 2000,
-                                                        "Automation Testing Expert", 2000,
-                                                    ]}
-                                                    loop={Infinity}
-                                                    wrapper="span"
-                                                />
-                                            </h2>
+                        <TypeAnimation
+                            sequence={[
+                                "Tester at Wipro", 2000,      // Text + 2s delay
+                                "Manual Testing Specialist", 2000,
+                                "Automation Testing Expert", 2000,
+                            ]}
+                            speed={50} // Typing speed (ms)
+                            repeat={Infinity} // Loop indefinitely
+                            wrapper="span" // Wrap with a span element
+                        />
+                    </h2>
                     <p style={{ marginTop: "15px", fontSize: "16px", lineHeight: "1.6" }}>
-                            I am <b>Libin Chandar</b>, a dedicated <b>Tester at Wipro</b> with expertise in <b>Manual Testing</b> and <b>Automation Testing using Python</b>.
-                            Passionate about ensuring software quality, I specialize in designing and executing test cases, identifying bugs, and optimizing testing processes.
-                        </p>
+                        I am <b>Libin Chandar</b>, a dedicated <b>Tester at Wipro</b> with expertise in <b>Manual Testing</b> and <b>Automation Testing using Python</b>.
+                        Passionate about ensuring software quality, I specialize in designing and executing test cases, identifying bugs, and optimizing testing processes.
+                    </p>
                     <button
                         onClick={handleResumeDownload}
                         style={{
